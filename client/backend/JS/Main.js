@@ -106,3 +106,5 @@ WS.onOpen = () => {
 
   console.log('Sending test packet to /domain');
 };
+
+const C = new Controller();
