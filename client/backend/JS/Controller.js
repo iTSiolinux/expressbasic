@@ -96,4 +96,4 @@ class Controller {
     }
 }
 
-const C = new Controller();
+export default Controller;

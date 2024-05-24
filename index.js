@@ -1,3 +1,4 @@
+// index.js
 const express = require('express'),
   expressWs = require('express-ws'),
   { Packet, ServerSocket } = require('./server/ServerSocket.js'),

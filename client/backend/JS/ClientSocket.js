@@ -1,4 +1,4 @@
-export class Packet {
+class Packet {
   constructor(event, data) {
     this.stringifyed = JSON.stringify({ event: event, data: data });
   }
@@ -20,9 +20,10 @@ export class Packet {
   }
 }
 
-export class ClientSocket {
+class ClientSocket {
   constructor(url) {
     this.messageArray = [];
+
     if (typeof url === 'string' && url.indexOf('://') === -1) {
       const protocol =
         document.location.protocol.indexOf('s') === -1 ? 'ws' : 'wss';
@@ -32,10 +33,10 @@ export class ClientSocket {
       this.SOCKET = new WebSocket(url);
     }
 
-    this.SOCKET.addEventListener('open', this.onOpen);
-    this.SOCKET.addEventListener('close', this.onClose);
-    this.SOCKET.addEventListener('error', this.onError);
-    this.SOCKET.addEventListener('message', this.message);
+    this.SOCKET.addEventListener('open', (event) => {this.onOpen(event)});
+    this.SOCKET.addEventListener('close', (event) => {this.onClose(event)});
+    this.SOCKET.addEventListener('error', (event) => {this.onError(event)});
+    this.SOCKET.addEventListener('message', (event) => {this.message(event)});
   }
 
   // events
@@ -92,3 +93,6 @@ export class ClientSocket {
     this.SOCKET.close();
   }
 }
+
+
+export {ClientSocket, Packet}

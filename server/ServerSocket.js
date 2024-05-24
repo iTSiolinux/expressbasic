@@ -1,3 +1,4 @@
+// ServerSocket.js
 class Packet {
   constructor(event, data) {
     this.stringifyed = JSON.stringify({ event: event, data: data });
