@@ -15,3 +15,13 @@ Welcome to my game template project repository! This project combines the power 
    ```bash
    npm install express express-ws ws
    ```
+
+2. **Run Server:**
+
+   ```bash
+   npm start
+   ```
+
+3. **Open in Browser**
+
+   in ```localhost:5000```
